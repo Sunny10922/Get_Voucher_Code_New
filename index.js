@@ -9,15 +9,16 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.get('/getweather', function(request, response) {
+app.get('/getweather', function(request, responsefromWeb) {
   axios.get('https://api.weather.gov/alerts?active=1&state=MN')
-  .then(function (responseWS) {
-    console.log(responseWS.features);
-    response.send(responseWS.features);
+  .then(function (response) {
+  	console.log(response);
+    console.log(response.features);
+    responsefromWeb.send(response.features);
   })
   .catch(function (error) {
     console.log(error);
-    response.send(error);
+    responsefromWeb.send(error);
   });
 })
 app.listen(app.get('port'), function() {
