@@ -18,11 +18,11 @@ app.get('/getweather', function(request, responsefromWeb) {
   	for(var x=0;x<datafromCall.length;x++){
   		var weatherItem = {
   			"keys":{
-  				"id" : datafromCall[x].properties
+  				"id" : datafromCall[x].properties.id
   			},
   			"values":{
   				"type": datafromCall[x].type,
-  				"effective": datafromCall[x].properties.type,
+  				"effective": datafromCall[x].properties.effective,
   				"expires": datafromCall[x].properties.expires,
   				"certainty": datafromCall[x].properties.certainty,
   				"event": datafromCall[x].properties.event,
