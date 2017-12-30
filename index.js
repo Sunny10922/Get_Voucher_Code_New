@@ -11,9 +11,9 @@ app.get('/', function(request, response) {
 
 app.get('/getweather', function(request, response) {
   axios.get('https://api.weather.gov/alerts?active=1&state=MN')
-  .then(function (response) {
-    console.log(response);
-    response.send(response.features);
+  .then(function (responseWS) {
+    console.log(responseWS.features);
+    response.send(responseWS.features);
   })
   .catch(function (error) {
     console.log(error);
