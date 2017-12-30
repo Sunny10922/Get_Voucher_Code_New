@@ -33,7 +33,6 @@ app.get('/getweather', function(request, responsefromWeb) {
   		}
   		weatherData.push(weatherItem);
   	}
-  	console.log(weatherData);
     responsefromWeb.send(response.data.features);
   })
   .catch(function (error) {
@@ -56,7 +55,6 @@ app.get('/connecttoMC', function(request, responsefromWeb) {
 	  }
 	})
 	  .then(function(response) {
-	  	console.log(response);
 	  		responsefromWeb.send('Authorization Sent');
 	  		token = response.data.accessToken;
 	  	
@@ -66,6 +64,22 @@ app.get('/connecttoMC', function(request, responsefromWeb) {
 	  });
 })
 
+app.get('/connecttoMCData', function(request, responsefromWeb) {
+	
+	axios({
+	    method: 'post',
+	    url: 'https://www.exacttargetapis.com/hub/v1/dataevents/key:weatherdataextension/rowset',
+	    data: weatherData,
+	    headers:{
+	       'Authorization': 'Bearer ' + token,
+	       'Content-Type': 'application/json',
+	    }
+	  })
+	    .then(function(response) {
+	      console.log(response);
+	      responsefromWeb.send(response);
+	  });
+})
  
 
 app.listen(app.get('port'), function() {
