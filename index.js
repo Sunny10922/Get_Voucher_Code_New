@@ -27,7 +27,7 @@ app.get('/connecttoMC', function(request, responsefromWeb) {
     'clientSecret': process.env.CLIENT_SECRET  
   	}
 	axios({
-	  method:'get',
+	  method:'post',
 	  url:'https://auth.exacttargetapis.com/v1/requestToken',
 	  data: conData,
 	  headers:{
