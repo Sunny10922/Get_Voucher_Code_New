@@ -6,14 +6,22 @@ var weatherData = [];
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
+<<<<<<< HEAD
 require('dotenv').load();
 console.log(process.env.CLIENT_ID);
+=======
+
+>>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
 app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
 app.get('/getweather', function(request, responsefromWeb) {
+<<<<<<< HEAD
   axios.get('https://api.weather.gov/alerts?active=1&state=AZ')
+=======
+  axios.get('https://api.weather.gov/alerts?active=1&state=MN')
+>>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
   .then(function (response) {
   	var datafromCall = response.data.features;
   	for(var x=0;x<datafromCall.length;x++){
@@ -22,7 +30,18 @@ app.get('/getweather', function(request, responsefromWeb) {
   				"id" : datafromCall[x].properties.id
   			},
   			"values":{
+<<<<<<< HEAD
   				"type": datafromCall[x].type
+=======
+  				"type": datafromCall[x].type,
+  				"effective": datafromCall[x].properties.effective,
+  				"expires": datafromCall[x].properties.expires,
+  				"certainty": datafromCall[x].properties.certainty,
+  				"event": datafromCall[x].properties.event,
+  				"response": datafromCall[x].properties.response,
+  				"headline": datafromCall[x].properties.headline,
+  				"description": datafromCall[x].properties.description
+>>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
   			}
   		}
   		weatherData.push(weatherItem);
@@ -36,7 +55,10 @@ app.get('/getweather', function(request, responsefromWeb) {
 })
 
 app.get('/connecttoMC', function(request, responsefromWeb) {
+<<<<<<< HEAD
 	console.log(process.env.CLIENT_ID);
+=======
+>>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
 	var conData = {
     'clientId': process.env.CLIENT_ID,
     'clientSecret': process.env.CLIENT_SECRET  
@@ -73,11 +95,15 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	    .then(function(response) {
 	      console.log(response);
 	      responsefromWeb.send(response);
+<<<<<<< HEAD
 		}) 
 		 .catch(function (error) {
 			console.log(error);
 		});
 	;
+=======
+	  });
+>>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
 })
  
 
