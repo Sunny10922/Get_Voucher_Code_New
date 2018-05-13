@@ -1,0 +1,30 @@
+{
+  "name": "node-js-sample",
+  "version": "0.2.0",
+  "description": "Heroku Salesforce Marketing Cloud Integration",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.13.3"
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leafarhz/sfdcmarketingcloud"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express",
+    "Salesforce",
+    "MarketingCloud",
+    "Heroku"
+  ],
+  "author": "Rafael Hernandez",
+  "license": "MIT"
+}

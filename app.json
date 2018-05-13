@@ -1,0 +1,7 @@
+{
+  "name": "Salesforce Marketing Cloud API and Heroku",
+  "description": "Salesforce Marketing Cloud API and Heroku Integration example",
+  "repository": "https://github.com/leafarhz/sfdcmarketingcloud",
+  "logo": "https://rawgit.com/heroku/node-js-sample/master/public/node.svg",
+  "keywords": ["node", "marketingcloud", "salesforce"]
+}
