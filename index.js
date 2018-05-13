@@ -7,11 +7,9 @@ var weatherData = [];
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 require('dotenv').load();
-console.log(process.env.CLIENT_ID);
 app.get('/', function(request, response) {
   response.send('Hello World!')
 })
-
 app.get('/getweather', function(request, responsefromWeb) {
   axios.get('https://api.weather.gov/alerts?active=1&state=AZ')
   .then(function (response) {
@@ -77,7 +75,6 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 		 .catch(function (error) {
 			console.log(error);
 		});
-	;
 })
  
 
