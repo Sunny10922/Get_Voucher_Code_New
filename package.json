@@ -7,10 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-<<<<<<< HEAD
     "dotenv": "^5.0.1",
-=======
->>>>>>> d252545ec1898f52693454ea1f01cedd5f5a78ae
     "express": "^4.13.3"
   },
   "engines": {
