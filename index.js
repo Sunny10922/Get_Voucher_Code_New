@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 const axios = require('axios');
+const CircularJSON = require('circular-json');
 var token='';
 var weatherData = [];
 
@@ -20,7 +21,8 @@ app.get('/getweather', function(request, responsefromWeb) {
   				"id" : datafromCall[x].properties.id
   			},
   			"values":{
-  				"type": datafromCall[x].type
+					"field1": datafromCall[x].type,
+					"field2": datafromCall[x].properties.sender
   			}
   		}
   		weatherData.push(weatherItem);
@@ -69,8 +71,9 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	    }
 	  })
 	    .then(function(response) {
-	      console.log(response);
-	      responsefromWeb.send(response);
+				let json = CircularJSON.stringify(response);
+	      console.log(json);
+	      responsefromWeb.send(json);
 		}) 
 		 .catch(function (error) {
 			console.log(error);

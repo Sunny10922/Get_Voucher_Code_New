@@ -32,9 +32,7 @@
 
  	function connecttoMCData(){
  		$.get( "/connecttoMCData", function( data ) {
-	 	console.log(data);
-	 	
-
+	 	console.log($.parseJSON(data));
 	});
  	}
 
