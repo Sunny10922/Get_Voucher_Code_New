@@ -12,13 +12,13 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 app.get('/getweather', function(request, responsefromWeb) {
-  axios.get('https://api.weather.gov/alerts?active=1&state=AZ')
+  axios.get('https://api.weather.gov/alerts/active/area/MN')
   .then(function (response) {
   	var datafromCall = response.data.features;
   	for(var x=0;x<datafromCall.length;x++){
   		var weatherItem = {
   			"keys":{
-  				"id" : datafromCall[x].properties.id
+  				"theid" : datafromCall[x].properties.id
   			},
   			"values":{
 					"field1": datafromCall[x].type,
@@ -63,7 +63,7 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	
 	axios({
 	    method: 'post',
-	    url: 'https://www.exacttargetapis.com/hub/v1/dataevents/key:weatherdataextension/rowset',
+	    url: 'https://www.exacttargetapis.com/hub/v1/dataevents/key:testdataextension/rowset',
 	    data: weatherData,
 	    headers:{
 	       'Authorization': 'Bearer ' + token,
@@ -71,7 +71,7 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	    }
 	  })
 	    .then(function(response) {
-				let json = CircularJSON.stringify(response);
+				var json = CircularJSON.stringify(response);
 	      console.log(json);
 	      responsefromWeb.send(json);
 		}) 
