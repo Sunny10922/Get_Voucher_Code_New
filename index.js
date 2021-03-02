@@ -38,12 +38,13 @@ app.get('/getweather', function(request, responsefromWeb) {
 app.get('/connecttoMC', function(request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
 	var conData = {
-    'clientId': process.env.CLIENT_ID,
-    'clientSecret': process.env.CLIENT_SECRET  
+	    'grant_type': 'client_credentials',	
+	    'clientId': process.env.CLIENT_ID,
+	    'clientSecret': process.env.CLIENT_SECRET  
   	}
 	axios({
 	  method:'post',
-	  url:'https://mch6zlw14tstgdw8kmyt93q5z7c0.auth.marketingcloudapis.com/v1/requestToken',
+	  url:'https://mctg9llgcpl0dff718-t9898wqh1.auth.marketingcloudapis.com/v2/token',
 	  data: conData,
 	  headers:{
        'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	
 	axios({
 	    method: 'post',
-	    url: 'https://mch6zlw14tstgdw8kmyt93q5z7c0.rest.marketingcloudapis.com/hub/v1/dataevents/key:testdataextension/rowset',
+	    url: 'https://mctg9llgcpl0dff718-t9898wqh1.rest.marketingcloudapis.com/hub/v1/dataevents/key:testdataextension/rowset',
 	    data: weatherData,
 	    headers:{
 	       'Authorization': 'Bearer ' + token,
