@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 app.get('/getweather', function(request, responsefromWeb) {
-  axios.get('https://api.weather.gov/alerts/active/area/MN')
+  axios.get('https://api.weather.gov/alerts/active/area/IL')
   .then(function (response) {
   	var datafromCall = response.data.features;
   	for(var x=0;x<datafromCall.length;x++){
@@ -43,7 +43,7 @@ app.get('/connecttoMC', function(request, responsefromWeb) {
   	}
 	axios({
 	  method:'post',
-	  url:'https://auth.exacttargetapis.com/v1/requestToken',
+	  url:'https://mch6zlw14tstgdw8kmyt93q5z7c0.auth.marketingcloudapis.com/v1/requestToken',
 	  data: conData,
 	  headers:{
        'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ app.get('/connecttoMCData', function(request, responsefromWeb) {
 	
 	axios({
 	    method: 'post',
-	    url: 'https://www.exacttargetapis.com/hub/v1/dataevents/key:testdataextension/rowset',
+	    url: 'https://mch6zlw14tstgdw8kmyt93q5z7c0.rest.marketingcloudapis.com/hub/v1/dataevents/key:testdataextension/rowset',
 	    data: weatherData,
 	    headers:{
 	       'Authorization': 'Bearer ' + token,
