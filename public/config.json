@@ -15,8 +15,12 @@
     },
     "arguments": {
         "execute": {
-          "inArguments":[],
-          "outArguments": [],
+          "inArguments":[{
+            "emailAddress": "sunny.bansal@test.com"
+          }],
+          "outArguments": [{
+            "emailSupressed": "No"
+          }],
           "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
@@ -62,10 +66,22 @@
     "schema": {
         "arguments": {
             "execute": {
-                "inArguments": [
-                  
-                ],
-                "outArguments": []
+                "inArguments": [{
+                  "emailAddress": {
+                    "dataType": "text",
+                    "isNullable": true,
+                    "direction": "in",
+                    "access": "visible"
+                  }
+                }],
+                "outArguments": [{
+                  "emailSupressed": {
+                    "dataType": "text",
+                    "isNullable": true,
+                    "direction": "in",
+                    "access": "visible"
+                  }
+                }]
             }
         }
     }
