@@ -21,7 +21,7 @@
                   }
 			],
           "outArguments": [],
-          "url": "https://sfdc-marketing-cloud.herokuapp.com/index.htm/journeybuilder/execute",
+          "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -33,22 +33,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "__application_key_from_appcenter_here__",
       "save": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/index.htm/journeybuilder/save",
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/index.htm/journeybuilder/publish",
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/index.htm/journeybuilder/stop",
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/index.htm/journeybuilder/validate",
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate",
         "verb": "POST",
         "useJwt": true
       }
