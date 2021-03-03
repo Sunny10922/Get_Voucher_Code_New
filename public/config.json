@@ -15,11 +15,7 @@
     },
     "arguments": {
         "execute": {
-           "inArguments":[
-				          {
-                    "emailAddress": "{{Contact.Attribute.Campaigns.CampaignName}}"
-                  }
-			],
+          "inArguments":[],
           "outArguments": [],
           "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute",
            "verb": "POST",
