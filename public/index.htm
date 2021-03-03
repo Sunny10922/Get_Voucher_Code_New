@@ -13,7 +13,7 @@
 
  <script type="text/javascript">
  	$.get( "/getweather", function( data ) {
-	 	console.log(data);
+	 	console.log('data1'+data);
 	 	$(function () {
 		    $('#table').bootstrapTable({
 		        data: data
@@ -24,7 +24,7 @@
 
  	function connecttoMC(){
  		$.get( "/connecttoMC", function( data ) {
-	 	console.log(data);
+	 	console.log('data2'+data);
 	 	
 
 	});
