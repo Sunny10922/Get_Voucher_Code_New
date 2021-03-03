@@ -39,8 +39,8 @@ app.get('/connecttoMC', function(request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
 	var conData = {
 	    'grant_type': 'client_credentials',	
-	    'clientId': process.env.CLIENT_ID,
-	    'clientSecret': process.env.CLIENT_SECRET  
+	    'client_id': process.env.CLIENT_ID,
+	    'client_secret': process.env.CLIENT_SECRET  
   	}
 	axios({
 	  method:'post',
