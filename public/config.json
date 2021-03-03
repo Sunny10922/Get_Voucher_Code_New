@@ -2,15 +2,13 @@
     "workflowApiVersion": "1.1",
     "metaData": {
         "icon": "images/icon.png",
-        "iconSmall": "images/iconSmall.png",
         "category": "message"
     },
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Template",
-          "description": "A Template for a custom Journey Builder activity",
-          "step1Label": "Configure Activity"
+            "name": "Custom Activity",
+            "description": "A custom Journey Builder activity"
         }
     },
     "arguments": {
@@ -21,47 +19,51 @@
           "outArguments": [{
             "emailSupressed": "No"
           }],
-          "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute",
-           "verb": "POST",
-            "body": "",
-            "header": "",
-            "format": "json",
-            "useJwt": true,
-            "timeout": 10000
+          "timeout": 100000,
+          "retryCount": 1,
+          "retryDelay": 10000,
+          "concurrentRequests" : 5,
+          "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute"
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "__application_key_from_appcenter_here__",
       "save": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save",
-          "verb": "POST",
-        "useJwt": true
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save"
        },
        "publish": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish",
-           "verb": "POST",
-        "useJwt": true
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish"
        },
       "stop": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop",
-           "verb": "POST",
-        "useJwt": true
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop"
       },
       "validate": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate",
-        "verb": "POST",
-        "useJwt": true
+        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate"
       }
     },
-    "wizardSteps": [
-        { "label": "Configure Activity", "key": "step1" }
+    "wizardSteps": [{
+        "label": "Step 1",
+        "key": "step1"
+      },
+      {
+        "label": "Step 2",
+        "key": "step2"
+      },
+      {
+        "label": "Step 3",
+        "key": "step3"
+      },
+      {
+        "label": "Step 4",
+        "key": "step4",
+        "active": false
+      }
     ],
     "userInterfaces": {
-        "configModal": {
-            "height": 400,
-            "width": 1000,
-          "fullscreen": false
-        }
+      "configModal": {
+        "height": 200,
+        "width": 300,
+        "fullscreen": true
+      }
     },
     "schema": {
         "arguments": {
@@ -70,16 +72,14 @@
                   "emailAddress": {
                     "dataType": "text",
                     "isNullable": true,
-                    "direction": "in",
-                    "access": "visible"
+                    "direction": "in"
                   }
                 }],
                 "outArguments": [{
                   "emailSupressed": {
                     "dataType": "text",
                     "isNullable": true,
-                    "direction": "in",
-                    "access": "visible"
+                    "direction": "in"
                   }
                 }]
             }
