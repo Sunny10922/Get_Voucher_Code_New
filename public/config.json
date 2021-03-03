@@ -81,7 +81,7 @@
                     "isNullable": true,
                     "direction": "in"
                   }
-                }]
+                }] 
             }
         }
     }
