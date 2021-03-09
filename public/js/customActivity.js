@@ -25,6 +25,7 @@ define([
     }
 
     function initialize(data) {
+        console.log('--Inside iitialize');
         console.log(data);
         if (data) {
             payload = data;
@@ -38,11 +39,13 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
+
         console.log(inArguments);
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-
+                console.log('--inArgument--');
+                console.log(inArgument);
             });
         });
 
@@ -67,7 +70,7 @@ define([
     }
 
     function save() {
-
+        console.log('--Inside Save--');
         // 'payload' is initialized on 'initActivity' above.
         // Journey Builder sends an initial payload with defaults
         // set by this activity's config.json file.  Any property
