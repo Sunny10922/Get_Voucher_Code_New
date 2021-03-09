@@ -1,17 +1,38 @@
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Custom Journey Builder Activity</title>
 	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+  <script type="text/javascript" src="js/require.js"></script>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css" />
 
 
  <script type="text/javascript">
+
+  (function() {
+    var config = {
+        baseUrl: ''
+    };
+
+    var dependencies = [
+        'customActivity'
+    ];
+    require(config, dependencies);
+  })();
+  
  	$.get( "/getweather", function( data ) {
 	 	console.log(data);
 	 	$(function () {
@@ -36,10 +57,37 @@
 	});
  	}
 
- </script>
+</script>
+
+<style type="text/css">
+  body {
+      padding: 20px;
+      margin: 0;
+  }
+  .step {
+      display: none;
+  }
+  #step1 {
+      display: block;
+  }
+</style>
+
 </head>
 
    <body>
+    <div id="step1" class="step">
+
+      Select your SMS message:
+    <select id="select1">
+        <option value="">Select an option</option>
+        <option value="someMessage">Some SMS</option>
+        <option value="anotherMessage">Another SMS</option>
+        <option value="thirdMessage">Third SMS</option>
+        <option value="unknownMessage">Unknown SMS</option>
+    </select>
+
+    <button id="toggleLastStep">Toggle Last Step</button>
+    
     <div class="container">
       <div class="row">
       <div class="col">
@@ -69,5 +117,17 @@
       </div>
     </div>
     </div>
+  </div>
+
+    <div id="step2" class="step">
+      Here's a second page with some info on it.
+    </div>
+    <div id="step3" class="step">
+        You chose the message: <div id="message"></div>
+    </div>
+    <div id="step4" class="step">
+        Hey, here's a fourth step, just for you.  Toggle this on or off from step 1.
+    </div>
+
    </body>
 </html>
