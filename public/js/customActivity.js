@@ -49,10 +49,10 @@ define([
             });
         });
 
-        connection.trigger('updateButton', {
-            button: 'next',
+        connection.trigger('save', {
+            button: 'save',
             text: 'done',
-            visible: true
+            visible: fase
         });
 
 

@@ -7,7 +7,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Custom Activity",
+      "name": "Get Weather Information",
       "description": "A custom Journey Builder activity"
     }
   },
