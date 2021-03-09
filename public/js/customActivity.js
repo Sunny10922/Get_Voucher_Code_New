@@ -9,28 +9,25 @@ define([
     var payload = {};
     var lastStepEnabled = false;
     var steps = [ // initialize to the same value as what's set in config.json for consistency
-        { "label": "Step 1", "key": "step1" },
-        { "label": "Step 2", "key": "step2" },
-        { "label": "Step 3", "key": "step3" },
-        { "label": "Step 4", "key": "step4", "active": false }
+        { "label": "Step 1", "key": "step1" }
     ];
     var currentStep = steps[0].key;
 
     $(window).ready(onRender);
 
     connection.on('initActivity', initialize);
-    connection.on('requestedTokens', onGetTokens);
+    /*connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
 
     connection.on('clickedNext', onClickedNext);
     connection.on('clickedBack', onClickedBack);
-    connection.on('gotoStep', onGotoStep);
+    connection.on('gotoStep', onGotoStep);*/
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
 
-        connection.trigger('requestTokens');
+        /*connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
 
         // Disable the next button if a value isn't selected
@@ -39,16 +36,16 @@ define([
             connection.trigger('updateButton', { button: 'next', enabled: Boolean(message) });
 
             $('#message').html(message);
-        });
+        });*/
 
         // Toggle step 4 active/inactive
         // If inactive, wizard hides it and skips over it during navigation
-        $('#toggleLastStep').click(function() {
+        /*$('#toggleLastStep').click(function() {
             lastStepEnabled = !lastStepEnabled; // toggle status
             steps[3].active = !steps[3].active; // toggle active
 
             connection.trigger('updateSteps', steps);
-        });
+        });*/
     }
 
     function initialize (data) {
@@ -75,7 +72,7 @@ define([
         });
 
         // If there is no message selected, disable the next button
-        if (!message) {
+        /*if (!message) {
             showStep(null, 1);
             connection.trigger('updateButton', { button: 'next', enabled: false });
             // If there is a message, skip to the summary step
@@ -83,10 +80,10 @@ define([
             $('#select1').find('option[value='+ message +']').attr('selected', 'selected');
             $('#message').html(message);
             showStep(null, 3);
-        }
+        }*/
     }
 
-    function onGetTokens (tokens) {
+    /*function onGetTokens (tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         // console.log(tokens);
     }
@@ -94,9 +91,9 @@ define([
     function onGetEndpoints (endpoints) {
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         // console.log(endpoints);
-    }
+    }*/
 
-    function onClickedNext () {
+    /*function onClickedNext () {
         if (
             (currentStep.key === 'step3' && steps[3].active === false) ||
             currentStep.key === 'step4'
@@ -194,6 +191,6 @@ define([
 
     function getMessage() {
         return $('#select1').find('option:selected').attr('value').trim();
-    }
+    }*/
 
 });
