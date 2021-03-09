@@ -41,7 +41,7 @@
       }
     },
     "wizardSteps": [{
-        "label": "Step 1",
+        "label": "Configure Activity",
         "key": "step1"
       }
     ],
