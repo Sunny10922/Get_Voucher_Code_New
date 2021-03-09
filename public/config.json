@@ -1,75 +1,84 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-        "icon": "images/icon.png",
-        "category": "message"
-    },
-    "type": "REST",
-    "lang": {
-        "en-US": {
-            "name": "Custom Activity",
-            "description": "A custom Journey Builder activity"
-        }
-    },
-    "arguments": {
-        "execute": {
-          "inArguments":[{
-            "emailAddress": "sunny.bansal@test.com"
-          }],
-          "outArguments": [{
-            "emailSupressed": "No"
-          }],
-          "timeout": 100000,
-          "retryCount": 1,
-          "retryDelay": 10000,
-          "concurrentRequests" : 5,
-          "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute"
-        }
-    },
-    "configurationArguments": {
-      "save": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save"
-       },
-       "publish": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish"
-       },
-      "stop": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop"
-      },
-      "validate": {
-        "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate"
-      }
-    },
-    "wizardSteps": [{
-        "label": "Configure Activity",
-        "key": "step1"
-      }
-    ],
-    "userInterfaces": {
-      "configModal": {
-        "height": 200,
-        "width": 300,
-        "fullscreen": true
-      }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [{
-                  "emailAddress": {
-                    "dataType": "text",
-                    "isNullable": true,
-                    "direction": "in"
-                  }
-                }],
-                "outArguments": [{
-                  "emailSupressed": {
-                    "dataType": "text",
-                    "isNullable": true,
-                    "direction": "in"
-                  }
-                }] 
-            }
-        }
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/icon.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Custom Activity",
+      "description": "A custom Journey Builder activity"
     }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "emailAddress": "sunny.bansal@test.com"
+        }
+      ],
+      "outArguments": [
+        {
+          "emailSupressed": "No"
+        }
+      ],
+      "timeout": 100000,
+      "retryCount": 1,
+      "retryDelay": 10000,
+      "concurrentRequests": 5,
+      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute"
+    }
+  },
+  "configurationArguments": {
+    "save": {
+      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save"
+    },
+    "publish": {
+      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish"
+    },
+    "stop": {
+      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop"
+    },
+    "validate": {
+      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate"
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure Activity",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 200,
+      "width": 300,
+      "fullscreen": true
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "emailAddress": {
+              "dataType": "text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          }
+        ],
+        "outArguments": [
+          {
+            "emailSupressed": {
+              "dataType": "text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          }
+        ]
+      }
+    }
+  }
 }
