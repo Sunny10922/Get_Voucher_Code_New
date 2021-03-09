@@ -68,35 +68,32 @@
 </head>
 
 <body>
-  <div id="step1" class="step">
-
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <table id="table">
-            <thead>
-              <tr>
-                <th data-field="properties.id">ID</th>
-                <th data-field="type">Type</th>
-                <th data-field="properties.effective">Effective</th>
-                <th data-field="properties.expires">expires</th>
-                <th data-field="properties.certainty">Certainty</th>
-                <th data-field="properties.event">Event</th>
-                <th data-field="properties.response">Response</th>
-                <th data-field="properties.headline">Headline</th>
-                <th data-field="properties.description">Description</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <table id="table">
+          <thead>
+            <tr>
+              <th data-field="properties.id">ID</th>
+              <th data-field="type">Type</th>
+              <th data-field="properties.effective">Effective</th>
+              <th data-field="properties.expires">expires</th>
+              <th data-field="properties.certainty">Certainty</th>
+              <th data-field="properties.event">Event</th>
+              <th data-field="properties.response">Response</th>
+              <th data-field="properties.headline">Headline</th>
+              <th data-field="properties.description">Description</th>
+            </tr>
+          </thead>
+        </table>
       </div>
-      <div class="row justify-content-start">
-        <div class="col-4">
-          <button class="btn-success" onclick="connecttoMC();">Connecto to MC</button>
-        </div>
-        <div class="col-4">
-          <button class="btn-primary " onclick="connecttoMCData();">Send data to MC</button>
-        </div>
+    </div>
+    <div class="row justify-content-start">
+      <div class="col-4">
+        <button class="btn-success" onclick="connecttoMC();">Connecto to MC</button>
+      </div>
+      <div class="col-4">
+        <button class="btn-primary " onclick="connecttoMCData();">Send data to MC</button>
       </div>
     </div>
   </div>
