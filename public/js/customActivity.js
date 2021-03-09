@@ -31,10 +31,10 @@ define([
             payload = data;
         }
         
-        var hasInArguments = Boolean(
+        var hasInArguments = Boolean( 
             payload['arguments'] &&
             payload['arguments'].execute &&
-            payload['arguments'].execute.inArguments &&
+            payload['arguments'].execute.inArgumentspp &&
             payload['arguments'].execute.inArguments.length > 0
         );
 
