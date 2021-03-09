@@ -52,9 +52,9 @@
   ],
   "userInterfaces": {
     "configModal": {
-      "height": 200,
-      "width": 300,
-      "fullscreen": true
+      "height": 600,
+      "width": 6000,
+      "fullscreen": false
     }
   },
   "schema": {
