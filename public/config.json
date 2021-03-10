@@ -31,6 +31,7 @@
     }
   },
   "configurationArguments": {
+    "applicationExtensionKey": "cf45462b-e17d-49fe-8362-e6f51457927f",
     "save": {
       "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save"
     },
