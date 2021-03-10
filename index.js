@@ -18,7 +18,8 @@ app.get('/getweather', function (request, responsefromWeb) {
 			for (var x = 0; x < datafromCall.length; x++) {
 				var weatherItem = {
 					"keys": {
-						"theid": datafromCall[x].properties.id
+						"theid": datafromCall[x].properties.id,
+						"email_id": "test@gmail.com"
 					},
 					"values": {
 						"field1": datafromCall[x].type,
