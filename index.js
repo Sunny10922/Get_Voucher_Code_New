@@ -3,7 +3,7 @@ var app = express()
 const axios = require('axios');
 const CircularJSON = require('circular-json');
 var token = '';
-var weatherData = [];
+var voucherData = [];
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
@@ -62,12 +62,28 @@ app.get('/connecttoMC', function (request, responsefromWeb) {
 		});
 })
 
-/*app.get('/connecttoMCData', function (request, responsefromWeb) {
+app.get('/connecttoMCData', function (request, responsefromWeb) {
+
+	var voucherItem = {
+		"keys": {
+			"unique_key":  "12345",
+			"email_id":    "sunny.bansal@ibm.com"
+		},
+		"values": {
+			"first_name":  "Sunny",
+			"last_name":   "Bansal",
+			"age":         "28",
+			"birth_date":  "10/06/1992",
+			"phone_number":"9999614829",
+			"voucher_code":  "SunnyBansal123"
+		}
+	}
+	voucherData.push(voucherItem);
 
 	axios({
 		method: 'post',
 		url: 'https://mctg9llgcpl0dff718-t9898wqh1.rest.marketingcloudapis.com/hub/v1/dataevents/key:testdataextension/rowset',
-		data: weatherData,
+		data: voucherData,
 		headers: {
 			'Authorization': 'Bearer ' + token,
 			'Content-Type': 'application/json',
@@ -81,7 +97,7 @@ app.get('/connecttoMC', function (request, responsefromWeb) {
 		.catch(function (error) {
 			console.log(error);
 		});
-})*/
+})
 
 
 app.listen(app.get('port'), function () {

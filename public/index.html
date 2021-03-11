@@ -46,6 +46,9 @@
             console.log('--inside connecttoMC--');
             $.get("/connecttoMC", function (data) {
                 console.log(data);
+                $.get("/connecttoMCData", function (data) {
+                  console.log($.parseJSON(data));
+                });
             });
         }
     </script>
