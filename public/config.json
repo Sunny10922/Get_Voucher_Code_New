@@ -14,9 +14,7 @@
   "arguments": {
     "execute": {
       "inArguments": [{
-        "unique_key":  "12345",
-        "first_name":  "Sunny",
-        "last_name":   "Bansal"
+        "unique_key":  "12345"
       }], 
       "outArguments": [{
         "voucher_code":""
@@ -29,7 +27,7 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "8505c351-cc4e-415e-ae1a-3c5501d2899f",
+    "applicationExtensionKey": "ff63babd-9d39-4434-8d26-b6df42f23da0",
     "save": {
       "url": "https://get-voucher-code.herokuapp.com/journeybuilder/save"
     },
@@ -58,20 +56,6 @@
             "unique_key": {
               "dataType": "Text",
               "isNullable": false,
-              "direction": "in"
-            }
-          },
-          {
-            "first_name": {
-              "dataType": "Text",
-              "isNullable": true,
-              "direction": "in"
-            }
-          },
-          {
-            "last_name": {
-              "dataType": "Text",
-              "isNullable": true,
               "direction": "in"
             }
           }

@@ -66,9 +66,9 @@ define([
 
     function save() {
         
-        var firstName = $('#first_name').val();
+        /*var firstName = $('#first_name').val();
         var lastName = $('#last_name').val();
-        var voucherCode = firstName + '' + lastName + '12345';
+        var voucherCode = firstName + '' + lastName + '12345';*/
 
         payload['arguments'].execute.outArguments = [{
             "voucher_code": voucherCode
