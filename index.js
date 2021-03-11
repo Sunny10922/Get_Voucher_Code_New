@@ -36,7 +36,7 @@ app.get('/', function (request, response) {
 		});
 })*/
 
-app.get('/connecttoMC', function (request, responsefromWeb) {
+/*app.get('/connecttoMC', function (request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
 	var conData = {
 		'grant_type': 'client_credentials',
@@ -97,7 +97,7 @@ app.get('/connecttoMCData', function (request, responsefromWeb) {
 		.catch(function (error) {
 			console.log(error);
 		});
-})
+})*/
 
 
 app.listen(app.get('port'), function () {
