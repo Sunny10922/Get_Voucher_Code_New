@@ -47,7 +47,7 @@ define([
         
         connection.trigger('updateButton', {
             button: 'next',
-            text: 'Get Voucher Code',
+            text: 'done',
             visible: true
         });
     
