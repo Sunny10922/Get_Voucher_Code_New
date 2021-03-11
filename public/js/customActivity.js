@@ -50,7 +50,7 @@ define([
             text: 'Get Voucher Code',
             visible: true
         });
-
+    
     }
 
     function onGetTokens(tokens) {
