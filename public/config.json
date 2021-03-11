@@ -14,7 +14,14 @@
   "arguments": {
     "execute": {
       "inArguments": [{
-        "unique_key":  "12345"
+        "unique_key":  "12345",
+        "email_id":    "sunny.bansal@ibm.com",
+        "first_name":  "Sunny",
+        "last_name":   "Bansal",
+        "age":         28,
+        "birth_date":  "1992-06-10",
+        "phone_number":9999614829,
+        "is_married":  true
       }], 
       "outArguments": [{
         "voucher_code":""
@@ -27,7 +34,7 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "ff63babd-9d39-4434-8d26-b6df42f23da0",
+    "applicationExtensionKey": "8505c351-cc4e-415e-ae1a-3c5501d2899f",
     "save": {
       "url": "https://get-voucher-code.herokuapp.com/journeybuilder/save"
     },
@@ -56,6 +63,55 @@
             "unique_key": {
               "dataType": "Text",
               "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "email_id": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "first_name": {
+              "dataType": "Text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "last_name": {
+              "dataType": "Text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "age": {
+              "dataType": "Number",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "birth_date": {
+              "dataType": "Date",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "phone_number": {
+              "dataType": "Phone",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "is_married": {
+              "dataType": "Boolean",
+              "isNullable": true,
               "direction": "in"
             }
           }

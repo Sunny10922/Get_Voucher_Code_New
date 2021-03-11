@@ -41,6 +41,24 @@
         })();
     </script>
 
+    <script type="text/javascript">
+        function connecttoMC() {
+            console.log('--inside connecttoMC--');
+            $.get("/connecttoMC", function (data) {
+                console.log(data);
+            });
+        }
+
+        function connecttoMCData() {
+          console.log('--inside connecttoMCData--');
+          $.get("/connecttoMCData", function (data) {
+            //console.log(data);
+            console.log($.parseJSON(data));
+          });
+        }
+
+    </script>
+
     <style>
         table {
             width: 40%;
@@ -84,6 +102,8 @@
         <div class="slds-grid">
 
             <div class="header" id="myHeader">
+                <img src="//cdn.tmobile.com/content/dam/t-mobile/ntm/branding/logos/corporate/tmo-logo-v3.svg"
+                    alt="T-Mobile Logo">
                 <h3>
                     <center><b>Voucher Code Custom Activity</b></center>
                 </h3>
@@ -97,7 +117,63 @@
                         <td>
                             <input id="unique_key" name="unique_key" type="text" value="">
                         </td>
+                    </tr>
+                        <tr>
+                            <td>First Name</td>
+                            <td>
+                                <input id="first_name" name="first_name" type="text" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>
+                                <input id="last_name" name="last_name" type="text" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email Address</td>
+                            <td>
+                                <input id="email_id" name="email_id" type="email" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td>
+                                <input id="phone_number" name="phone_number" type="number" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>
+                                <input id="age" name="age" type="number" value="" min="1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td>
+                                <input id="birth_date" name="birth_date" type="date" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Is Married?</td>
+                            <td>
+                                <input id="is_married" name="is_married" type="checkbox" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                          <td>Voucher Code</td>
+                          <td>
+                              <input id="voucher_code" name="voucher_code" type="text" value="">
+                          </td>
                       </tr>
+                        <tr>
+                            <td >
+                                <input type="submit" onclick="connecttoMC();" value="Get Voucher Code">
+                            </td>
+                            <td  >
+                              <input type="submit" onclick="connecttoMCData();" value="Send Voucher Code to MC">
+                          </td>
+                        </tr>
                     </table>
                 </div>
             </center>
