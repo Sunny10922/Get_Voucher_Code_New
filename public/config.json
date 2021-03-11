@@ -30,22 +30,22 @@
       "retryCount": 1,
       "retryDelay": 10000,
       "concurrentRequests": 5,
-      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/execute"
+      "url": "https://get-voucher-code.herokuapp.com/journeybuilder/execute"
     }
   },
   "configurationArguments": {
     "applicationExtensionKey": "8b18b5c9-f4a3-45d2-9cb4-c212fbb1fa8c",
     "save": {
-      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/save"
+      "url": "https://get-voucher-code.herokuapp.com/journeybuilder/save"
     },
     "publish": {
-      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/publish"
+      "url": "https://get-voucher-code.herokuapp.com/journeybuilder/publish"
     },
     "stop": {
-      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/stop"
+      "url": "https://get-voucher-code.herokuapp.com/journeybuilder/stop"
     },
     "validate": {
-      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/validate"
+      "url": "https://get-voucher-code.herokuapp.com/journeybuilder/validate"
     }
   },
   "userInterfaces": {
