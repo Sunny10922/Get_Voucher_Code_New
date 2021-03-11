@@ -14,14 +14,14 @@
   "arguments": {
     "execute": {
       "inArguments": [{
-          "unique_key":  "12345",
-          "email_id":    "sunny.bansal@ibm.com",
-          "first_name":  "Sunny",
-          "last_name":   "Bansal",
-          "age":         28,
-          "birth_date":  "1992-06-10",
-          "phone_number":9999614829,
-          "is_married":  true
+        "unique_key":  "{{Contact.Attribute.TestSunnyDE.unique_key}}",
+        "email_id":    "{{Contact.Attribute.TestSunnyDE.email_id}}",
+        "first_name":  "{{Contact.Attribute.TestSunnyDE.first_name}}",
+        "last_name":   "{{Contact.Attribute.TestSunnyDE.last_name}}",
+        "age":         "{{Contact.Attribute.TestSunnyDE.age}}",
+        "birth_date":  "{{Contact.Attribute.TestSunnyDE.birth_date}}",
+        "phone_number":"{{Contact.Attribute.TestSunnyDE.phone_number}}",
+        "is_married":  "{{Contact.Attribute.TestSunnyDE.is_married}}"
       }],
       "outArguments": [{
         "voucher_code":""
