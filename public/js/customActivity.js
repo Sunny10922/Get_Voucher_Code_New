@@ -78,6 +78,20 @@ define([
         connection.trigger('updateActivity', payload);
     }
 
+    var express = require('express')
+    var app = express()
+    const axios = require('axios');
+    const CircularJSON = require('circular-json');
+    var token = '';
+    var voucherData = [];
+
+    app.set('port', (process.env.PORT || 5000))
+    app.use(express.static(__dirname + '/public'))
+    require('dotenv').load();
+    app.get('/', function (request, response) {
+        response.send('Hello World!')
+    })
+
     app.get('/connecttoMCData', function (request, responsefromWeb) {
         console.log('--Inside connecttoMCData method--');
         console.log(request);
