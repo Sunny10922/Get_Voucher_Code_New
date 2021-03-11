@@ -51,61 +51,6 @@ define([
             visible: true
         });
 
-        var express = require('express')
-    var app = express()
-    const axios = require('axios');
-    const CircularJSON = require('circular-json');
-    var token = '';
-    var voucherData = [];
-
-    app.set('port', (process.env.PORT || 5000))
-    app.use(express.static(__dirname + '/public'))
-    require('dotenv').load();
-    app.get('/', function (request, response) {
-        response.send('Hello World!')
-    })
-
-    app.get('/connecttoMCData', function (request, responsefromWeb) {
-        console.log('--Inside connecttoMCData method--');
-        console.log(request);
-        //var fName = $('#first_name').val();
-        //console.log('--fName::'+fName);
-    
-        var voucherItem = {
-            "keys": {
-                "unique_key":  "12345",
-                "email_id":    "sunny.bansal@ibm.com"
-            },
-            "values": {
-                "first_name":  "Sunny",
-                "last_name":   "Bansal",
-                "age":         "28",
-                "birth_date":  "10/06/1992",
-                "phone_number":"9999614829",
-                "voucher_code":  "SunnyBansal123"
-            }
-        }
-        voucherData.push(voucherItem);
-    
-        axios({
-            method: 'post',
-            url: 'https://mctg9llgcpl0dff718-t9898wqh1.rest.marketingcloudapis.com/hub/v1/dataevents/key:testdataextension/rowset',
-            data: voucherData,
-            headers: {
-                'Authorization': 'Bearer ' + token,
-                'Content-Type': 'application/json',
-            }
-        })
-            .then(function (response) {
-                var json = CircularJSON.stringify(response);
-                console.log(json);
-                responsefromWeb.send(json);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    })
-    
     }
 
     function onGetTokens(tokens) {

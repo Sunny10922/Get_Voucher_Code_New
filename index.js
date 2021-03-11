@@ -45,7 +45,7 @@ app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
 })
 
-/*app.get('/getweather', function (request, responsefromWeb) {
+app.get('/getweather', function (request, responsefromWeb) {
 	axios.get('https://api.weather.gov/alerts/active/area/IL')
 		.then(function (response) {
 			var datafromCall = response.data.features;
@@ -68,4 +68,4 @@ app.listen(app.get('port'), function () {
 			console.log(error);
 			responsefromWeb.send(error);
 		});
-})*/
+})
