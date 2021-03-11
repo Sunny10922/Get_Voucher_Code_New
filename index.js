@@ -41,7 +41,7 @@ app.get('/connecttoMC', function (request, responsefromWeb) {
 app.get('/connecttoMCData', function (request, responsefromWeb) {
 	console.log('--Inside connecttoMCData method--');
 	console.log(request);
-	var fName = $('#first_name').val();
+	//var fName = $('#first_name').val();
 	//console.log('--fName::'+fName);
 
 	var voucherItem = {
