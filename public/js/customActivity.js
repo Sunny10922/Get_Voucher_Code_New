@@ -14,11 +14,11 @@ define([
     connection.on('initActivity', initialize);
     connection.on('requestedTokens', onGetTokens);
     connection.on('requestedEndpoints', onGetEndpoints);
+    connection.on('clickedNext', save);
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
         connection.trigger('ready');
-
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
 
@@ -44,6 +44,7 @@ define([
 
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
+
                 console.log('--inArgument--');
                 console.log(inArgument);
             });
@@ -75,7 +76,7 @@ define([
         // Journey Builder sends an initial payload with defaults
         // set by this activity's config.json file.  Any property
         // may be overridden as desired.
-        payload.name = name;
+        //payload.name = name;
 
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
