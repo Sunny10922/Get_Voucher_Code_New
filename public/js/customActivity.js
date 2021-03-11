@@ -56,7 +56,7 @@ define([
     function onGetTokens(tokens) {
         console.log('--Inside onGetTokens--');
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log(tokens);
+        console.log(tokens.token);
         authTokens = tokens;
     }
 
