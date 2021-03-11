@@ -54,12 +54,14 @@ define([
     }
 
     function onGetTokens(tokens) {
+        console.log('--Inside onGetTokens--');
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log(tokens);
         authTokens = tokens;
     }
 
     function onGetEndpoints(endpoints) {
+        console.log('--Inside onGetEndpoints--');
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log(endpoints);
     }
