@@ -11,32 +11,8 @@ require('dotenv').load();
 app.get('/', function (request, response) {
 	response.send('Hello World!')
 })
-/*app.get('/getweather', function (request, responsefromWeb) {
-	axios.get('https://api.weather.gov/alerts/active/area/IL')
-		.then(function (response) {
-			var datafromCall = response.data.features;
-			for (var x = 0; x < datafromCall.length; x++) {
-				var weatherItem = {
-					"keys": {
-						"unique_key": datafromCall[x].properties.id,
-						"email_id": "test@gmail.com"
-					},
-					"values": {
-						"field1": datafromCall[x].type,
-						"field2": datafromCall[x].properties.sender
-					}
-				}
-				weatherData.push(weatherItem);
-			}
-			responsefromWeb.send(response.data.features);
-		})
-		.catch(function (error) {
-			console.log(error);
-			responsefromWeb.send(error);
-		});
-})*/
 
-/*app.get('/connecttoMC', function (request, responsefromWeb) {
+app.get('/connecttoMC', function (request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
 	var conData = {
 		'grant_type': 'client_credentials',
@@ -97,9 +73,34 @@ app.get('/connecttoMCData', function (request, responsefromWeb) {
 		.catch(function (error) {
 			console.log(error);
 		});
-})*/
+})
 
 
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
 })
+
+/*app.get('/getweather', function (request, responsefromWeb) {
+	axios.get('https://api.weather.gov/alerts/active/area/IL')
+		.then(function (response) {
+			var datafromCall = response.data.features;
+			for (var x = 0; x < datafromCall.length; x++) {
+				var weatherItem = {
+					"keys": {
+						"unique_key": datafromCall[x].properties.id,
+						"email_id": "test@gmail.com"
+					},
+					"values": {
+						"field1": datafromCall[x].type,
+						"field2": datafromCall[x].properties.sender
+					}
+				}
+				weatherData.push(weatherItem);
+			}
+			responsefromWeb.send(response.data.features);
+		})
+		.catch(function (error) {
+			console.log(error);
+			responsefromWeb.send(error);
+		});
+})*/

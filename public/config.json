@@ -7,7 +7,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Get Voucher Code New",
+      "name": "Get Voucher Code",
       "description": "A Template for a custom Journey Builder activity"
     }
   },
