@@ -12,7 +12,7 @@ app.get('/', function (request, response) {
 	response.send('Hello World!')
 })
 
-/*app.get('/connecttoMC', function (request, responsefromWeb) {
+app.get('/connecttoMC', function (request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
 	var conData = {
 		'grant_type': 'client_credentials',
@@ -81,7 +81,7 @@ app.get('/connecttoMCData', function (request, responsefromWeb) {
 
 app.listen(app.get('port'), function () {
 	console.log("Node app is running at localhost:" + app.get('port'))
-})*/
+})
 
 /*app.get('/getweather', function (request, responsefromWeb) {
 	axios.get('https://api.weather.gov/alerts/active/area/IL')
