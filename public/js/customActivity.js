@@ -25,7 +25,7 @@ define([
     }
 
     function initialize(data) {
-        console.log('--Inside iitialize');
+        console.log('--Inside initialize');
         console.log(data);
         if (data) {
             payload = data;
@@ -39,24 +39,17 @@ define([
         );
 
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
-
-        console.log(inArguments);
-
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-
-                console.log('--inArgument--');
-                console.log(inArgument);
+                $('#'+key).val(val); 
             });
         });
-
+        
         connection.trigger('updateButton', {
             button: 'next',
-            text: 'done',
+            text: 'Get Voucher Code',
             visible: true
         });
-
-
     }
 
     function onGetTokens(tokens) {
@@ -71,22 +64,17 @@ define([
     }
 
     function save() {
-        console.log('--Inside Save--');
-        // 'payload' is initialized on 'initActivity' above.
-        // Journey Builder sends an initial payload with defaults
-        // set by this activity's config.json file.  Any property
-        // may be overridden as desired.
-        //payload.name = name;
+        
+        var firstName = $('#first_name').val();
+        var lastName = $('#last_name').val();
+        var voucherCode = firstName + '' + lastName + '12345';
 
-        payload['arguments'].execute.inArguments = [{
-            "tokens": authTokens,
-            "emailAddress": "sunny.bansal@customactivity.com"
+        payload['arguments'].execute.outArguments = [{
+            "voucher_code": voucherCode
         }];
-
+        
         payload['metaData'].isConfigured = true;
-
         console.log(payload);
-
         connection.trigger('updateActivity', payload);
     }
 

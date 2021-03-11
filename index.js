@@ -11,7 +11,7 @@ require('dotenv').load();
 app.get('/', function (request, response) {
 	response.send('Hello World!')
 })
-app.get('/getweather', function (request, responsefromWeb) {
+/*app.get('/getweather', function (request, responsefromWeb) {
 	axios.get('https://api.weather.gov/alerts/active/area/IL')
 		.then(function (response) {
 			var datafromCall = response.data.features;
@@ -34,7 +34,7 @@ app.get('/getweather', function (request, responsefromWeb) {
 			console.log(error);
 			responsefromWeb.send(error);
 		});
-})
+})*/
 
 app.get('/connecttoMC', function (request, responsefromWeb) {
 	console.log(process.env.CLIENT_ID);
@@ -62,7 +62,7 @@ app.get('/connecttoMC', function (request, responsefromWeb) {
 		});
 })
 
-app.get('/connecttoMCData', function (request, responsefromWeb) {
+/*app.get('/connecttoMCData', function (request, responsefromWeb) {
 
 	axios({
 		method: 'post',
@@ -81,7 +81,7 @@ app.get('/connecttoMCData', function (request, responsefromWeb) {
 		.catch(function (error) {
 			console.log(error);
 		});
-})
+})*/
 
 
 app.listen(app.get('port'), function () {

@@ -1,59 +1,56 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "images/icon.png",
+    "icon": "images/Voucher_image.png",
     "category": "message"
   },
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Get Weather Information",
-      "description": "A custom Journey Builder activity"
+      "name": "Get Voucher Code New",
+      "description": "A Template for a custom Journey Builder activity"
     }
   },
   "arguments": {
     "execute": {
-      "inArguments": [
-        {
-          "emailAddress": "sunny.bansal@test.com"
-        }
-      ],
-      "outArguments": [
-        {
-          "emailSupressed": "No"
-        }
-      ],
+      "inArguments": [{
+          "unique_key":  "12345",
+          "email_id":    "sunny.bansal@ibm.com",
+          "first_name":  "Sunny",
+          "last_name":   "Bansal",
+          "age":         28,
+          "birth_date":  "1992-06-10",
+          "phone_number":9999614829,
+          "is_married":  true
+      }],
+      "outArguments": [{
+        "voucher_code":""
+      }],
       "timeout": 100000,
       "retryCount": 1,
       "retryDelay": 10000,
       "concurrentRequests": 5,
-      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/execute"
+      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/execute"
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "cf45462b-e17d-49fe-8362-e6f51457927f",
+    "applicationExtensionKey": "8b18b5c9-f4a3-45d2-9cb4-c212fbb1fa8c",
     "save": {
-      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/save"
+      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/save"
     },
     "publish": {
-      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/publish"
+      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/publish"
     },
     "stop": {
-      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/stop"
+      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/stop"
     },
     "validate": {
-      "url": "https://sfdc-marketing-cloud.herokuapp.com/journeybuilder/validate"
+      "url": "https://journey-builder-activity-sunny.herokuapp.com/journeybuilder/validate"
     }
   },
-  "wizardSteps": [
-    {
-      "label": "Configure Activity",
-      "key": "step1"
-    }
-  ],
   "userInterfaces": {
     "configModal": {
-      "height": 600,
+      "height": 400,
       "width": 1000,
       "fullscreen": false
     }
@@ -63,8 +60,57 @@
       "execute": {
         "inArguments": [
           {
-            "emailAddress": {
-              "dataType": "text",
+            "unique_key": {
+              "dataType": "Text",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "email_id": {
+              "dataType": "Email",
+              "isNullable": false,
+              "direction": "in"
+            }
+          },
+          {
+            "first_name": {
+              "dataType": "Text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "last_name": {
+              "dataType": "Text",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "age": {
+              "dataType": "Number",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "birth_date": {
+              "dataType": "Date",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "phone_number": {
+              "dataType": "Phone",
+              "isNullable": true,
+              "direction": "in"
+            }
+          },
+          {
+            "is_married": {
+              "dataType": "Boolean",
               "isNullable": true,
               "direction": "in"
             }
@@ -72,8 +118,8 @@
         ],
         "outArguments": [
           {
-            "emailSupressed": {
-              "dataType": "text",
+            "voucher_code": {
+              "dataType": "Text",
               "isNullable": true,
               "direction": "in"
             }

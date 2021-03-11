@@ -1,103 +1,180 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
-    crossorigin="anonymous"></script>
+    <title>Get Voucher Code</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-    rel="stylesheet"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-    crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js">
+    </script>
 
-  <script type="text/javascript" src="js/require.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <script type="text/javascript">
-    (function () {
-      var config = {
-        baseUrl: 'js'
-      };
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.css" />
 
-      var dependencies = [
-        'customActivity'
-      ];
+    <script src="js/postmonger.js"></script>
 
-      require(config, dependencies);
-    })();
-  </script>
-  
-  <script type="text/javascript">
-    $.get("/getweather", function (data) {
-      console.log(data);
-      $(function () {
-        $('#table').bootstrapTable({
-          data: data
-        });
-      });
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: 'js'
+            };
 
-    });
+            var dependencies = [
+                'customActivity'
+            ];
 
-    function connecttoMC() {
-      $.get("/connecttoMC", function (data) {
-        console.log(data);
+            require(config, dependencies);
+        })();
+    </script>
 
+    <script type="text/javascript">
+        function connecttoMC() {
+            console.log('--inside connecttoMC--');
+            $.get("/connecttoMC", function (data) {
+                console.log(data);
+            });
+        }
+    </script>
 
-      });
-    }
+    <style>
+        table {
+            width: 40%;
+            margin-left: 30px;
+        }
 
-    function connecttoMCData() {
-      $.get("/connecttoMCData", function (data) {
-        console.log($.parseJSON(data));
-      });
-    }
+        td {
+            padding: 5px;
+            text-align: left;
+            font-size: 15px
+        }
 
-  </script>
+        .header {
+            padding: 1px 16px;
+            background: white;
+        }
+
+        img {
+            margin: 12px;
+            float: left;
+        }
+
+        input[type=submit] {
+            background-color: #e20074;
+            border: none;
+            color: white;
+            padding: 9px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+    </style>
 </head>
 
-<body>
+<body style="background-color:#F8f8f8;">
+    <div id="step1" class="step">
+        <div class="slds-grid">
 
-  <main class="slds-col">
-    <center><h3 style="color: blue;">Welcome to weather custom activity!</h3></center>
-  </main>
+            <div class="header" id="myHeader">
+                <img src="//cdn.tmobile.com/content/dam/t-mobile/ntm/branding/logos/corporate/tmo-logo-v3.svg"
+                    alt="T-Mobile Logo">
+                <h3>
+                    <center><b>Voucher Code Custom Activity</b></center>
+                </h3>
+            </div>
+            <br />
+            <center>
+                <div>
+                    <table>
+                        <tr>
+                            <td>First Name</td>
+                            <td>
+                                <input id="first_name" name="first_name" type="text" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
+                            <td>
+                                <input id="last_name" name="last_name" type="text" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Email Address</td>
+                            <td>
+                                <input id="email_id" name="email_id" type="email" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td>
+                                <input id="phone_number" name="phone_number" type="number" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Age</td>
+                            <td>
+                                <input id="age" name="age" type="number" value="" min="1" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth</td>
+                            <td>
+                                <input id="birth_date" name="birth_date" type="date" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Is Married?</td>
+                            <td>
+                                <input id="is_married" name="is_married" type="checkbox" value="" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="padding-left: 20%;">
+                                <input type="submit" onclick="connecttoMC();" value="Get Voucher Code">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </center>
+            <!--script>
+                $(document).ready(function(){
+                    $("#myForm").submit(function(event){
+                        event.preventDefault();
+                        var num1 = $('#campaign_name').val();
+                        var num2 = $('#campaign_new_name').val();
+                        $.ajax({
+                            method: 'post',
+                            url: '/data',
+                            data: JSON.stringify({ num1: num1, num2: num2 }),
+                            contentType: 'application/json',
+                            success: function(data) {
+                                $('#campaign_final_name').val(data);
+                            }
+            
+                        })
+                    });
+                });
+            </script-->
+        </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <table id="table">
-          <thead>
-            <tr>
-              <th data-field="properties.id">ID</th>
-              <th data-field="type">Type</th>
-              <th data-field="properties.effective">Effective</th>
-              <th data-field="properties.expires">expires</th>
-              <th data-field="properties.certainty">Certainty</th>
-              <th data-field="properties.event">Event</th>
-              <th data-field="properties.response">Response</th>
-              <th data-field="properties.headline">Headline</th>
-              <th data-field="properties.description">Description</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
     </div>
-    <div class="row justify-content-start">
-      <div class="col-4">
-        <button class="btn-success" onclick="connecttoMC();">Connecto to MC</button>
-      </div>
-      <div class="col-4">
-        <button class="btn-primary " onclick="connecttoMCData();">Send data to MC</button>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
