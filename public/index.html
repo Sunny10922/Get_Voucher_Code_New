@@ -46,11 +46,15 @@
             console.log('--inside connecttoMC--');
             $.get("/connecttoMC", function (data) {
                 console.log(data);
-                $.get("/connecttoMCData", function (data) {
-                  console.log($.parseJSON(data));
-                });
             });
         }
+
+        function connecttoMCData() {
+          $.get("/connecttoMCData", function (data) {
+            console.log($.parseJSON(data));
+          });
+        }
+
     </script>
 
     <style>
@@ -149,9 +153,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="padding-left: 20%;">
+                            <td style="padding-left: 20%;">
                                 <input type="submit" onclick="connecttoMC();" value="Get Voucher Code">
                             </td>
+                            <td  style="padding-left: 20%;">
+                              <input type="submit" onclick="connecttoMCData();" value="Send Voucher Code to MC">
+                          </td>
                         </tr>
                     </table>
                 </div>
