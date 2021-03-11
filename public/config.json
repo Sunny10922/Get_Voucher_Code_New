@@ -34,7 +34,7 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "8b18b5c9-f4a3-45d2-9cb4-c212fbb1fa8c",
+    "applicationExtensionKey": "ff63babd-9d39-4434-8d26-b6df42f23da0",
     "save": {
       "url": "https://get-voucher-code.herokuapp.com/journeybuilder/save"
     },
