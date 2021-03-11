@@ -41,18 +41,21 @@ app.get('/connecttoMC', function (request, responsefromWeb) {
 app.get('/connecttoMCData', function (request, responsefromWeb) {
 	console.log('--Inside connecttoMCData method--');
 	console.log(request);
+	var fName = $('#first_name').val();
+	console.log('--fName::'+fName);
+
 	var voucherItem = {
 		"keys": {
 			"unique_key":  "12345",
 			"email_id":    "sunny.bansal@ibm.com"
 		},
 		"values": {
-			"first_name":  $('#first_name').val(),
-			"last_name":   $('#last_name').val(),
-			"age":         $('#age').val(),
-			"birth_date":  $('#birth_date').val(),
-			"phone_number":$('#phone_number').val(),
-			"voucher_code":$('#voucher_code').val()
+			"first_name":  "Sunny",
+			"last_name":   "Bansal",
+			"age":         "28",
+			"birth_date":  "10/06/1992",
+			"phone_number":"9999614829",
+			"voucher_code":  "SunnyBansal123"
 		}
 	}
 	voucherData.push(voucherItem);
