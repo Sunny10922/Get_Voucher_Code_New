@@ -22,7 +22,7 @@
         "birth_date":  "{{Contact.Attribute.TestSunnyDE.birth_date}}",
         "phone_number":"{{Contact.Attribute.TestSunnyDE.phone_number}}",
         "is_married":  "{{Contact.Attribute.TestSunnyDE.is_married}}"
-      }],
+      }], 
       "outArguments": [{
         "voucher_code":""
       }],

@@ -41,7 +41,7 @@ define([
         var inArguments = hasInArguments ? payload['arguments'].execute.inArguments : {};
         $.each(inArguments, function (index, inArgument) {
             $.each(inArgument, function (key, val) {
-                $('#'+key).val(val); 
+                $('#'+key).val(val);  
             });
         });
         
