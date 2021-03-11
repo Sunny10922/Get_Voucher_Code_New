@@ -50,35 +50,8 @@ define([
             text: 'Get Voucher Code',
             visible: true
         });
-    }
 
-    function onGetTokens(tokens) {
-        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
-        console.log(tokens);
-        authTokens = tokens;
-    }
-
-    function onGetEndpoints(endpoints) {
-        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
-        console.log(endpoints);
-    }
-
-    function save() {
-        
-        var firstName = $('#first_name').val();
-        var lastName = $('#last_name').val();
-        var voucherCode = firstName + '' + lastName + '12345';
-
-        payload['arguments'].execute.outArguments = [{
-            "voucher_code": voucherCode
-        }];
-        
-        payload['metaData'].isConfigured = true;
-        console.log(payload);
-        connection.trigger('updateActivity', payload);
-    }
-
-    var express = require('express')
+        var express = require('express')
     var app = express()
     const axios = require('axios');
     const CircularJSON = require('circular-json');
@@ -132,5 +105,33 @@ define([
                 console.log(error);
             });
     })
+    
+    }
+
+    function onGetTokens(tokens) {
+        // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
+        console.log(tokens);
+        authTokens = tokens;
+    }
+
+    function onGetEndpoints(endpoints) {
+        // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
+        console.log(endpoints);
+    }
+
+    function save() {
+        
+        var firstName = $('#first_name').val();
+        var lastName = $('#last_name').val();
+        var voucherCode = firstName + '' + lastName + '12345';
+
+        payload['arguments'].execute.outArguments = [{
+            "voucher_code": voucherCode
+        }];
+        
+        payload['metaData'].isConfigured = true;
+        console.log(payload);
+        connection.trigger('updateActivity', payload);
+    }
 
 });
